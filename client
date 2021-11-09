@@ -1,0 +1,22 @@
+import socket as s
+
+Client_S = s.s(s.AF_INET, s.SOCK_STREAM)
+Client_S.connect(('localhost', 3300))
+data = Client_S.recv(4042)
+
+Client_S.close()
+client_S = s.socket(s.AF_INET, s.SOCK_STREAM)
+client_S.connect(('localhost', int(data.decode())))
+
+while True:
+
+    a=input('>> ')
+    print (a)
+
+    client_S.send(a.encode())
+    print(from_server.decode())
+    from_server = client_S.recv(4042)
+
+    if from_server.decode() =='stop':
+
+        break
