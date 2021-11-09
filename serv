@@ -1,0 +1,29 @@
+# Socket-serv-client
+
+import socket as S
+
+import random
+
+serv = S.S(S.AF_INET, S.SOCK_STREAM)
+serv.bind(('localhost', 3300))
+serv.listen(5)
+def function():
+
+    while True:
+        connection, addr = serv1.accept()
+        b=random.randint(1,9999)
+        connection.send(str(S).encode())
+        connection.close()
+        break
+function()
+
+serv = S.S(S.AF_INET, S.SOCK_STREAM)
+serv.bind(('localhost'))
+serv.listen(5)
+
+users=['dan:pass','mtt:user']
+
+login=False
+while True:
+    connection, addr = serv.accept()
+    from_client = ''
